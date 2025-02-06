@@ -3,27 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hades;
+package UserHades;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import hades.hades;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
  *
- * @author PC15
+ * @author milan
  */
-public class Registration extends javax.swing.JFrame {
+public class Registration extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Registration
      */
     public Registration() {
-        
+        initComponents();
     }
 
     /**
@@ -37,30 +34,22 @@ public class Registration extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        PhoneNumber = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
         MoneyRemittance = new javax.swing.JLabel();
-        Username = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
-        Password = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        ConfirmPassword = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         confirmpassword = new javax.swing.JPasswordField();
         address = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         phonenumber = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        Email = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 255, 153));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -72,31 +61,31 @@ public class Registration extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 870, Short.MAX_VALUE)
+            .addGap(0, 920, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 60, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 60));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 60));
 
-        PhoneNumber.setBackground(new java.awt.Color(255, 255, 255));
-        PhoneNumber.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(0, 204, 102));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("Money Remittance");
         jLabel1.setToolTipText("");
         jLabel1.setMaximumSize(new java.awt.Dimension(107, 20));
-        PhoneNumber.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 110, 20));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 110, 20));
 
         password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordActionPerformed(evt);
             }
         });
-        PhoneNumber.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 120, 30));
+        jPanel3.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 120, 30));
 
         MoneyRemittance.setBackground(new java.awt.Color(0, 204, 102));
         MoneyRemittance.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -108,22 +97,22 @@ public class Registration extends javax.swing.JFrame {
                 MoneyRemittanceMouseEntered(evt);
             }
         });
-        PhoneNumber.add(MoneyRemittance, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 150, 20));
+        jPanel3.add(MoneyRemittance, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 150, 20));
 
-        Username.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Username.setText("Username :");
-        PhoneNumber.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, 20));
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel2.setText("Username :");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, 20));
 
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
             }
         });
-        PhoneNumber.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 120, 30));
+        jPanel3.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 120, 30));
 
-        Password.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Password.setText("Password :");
-        PhoneNumber.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, 20));
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setText("Password :");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, 20));
 
         jLabel4.setText("Register");
         jLabel4.setBorder(new javax.swing.border.MatteBorder(null));
@@ -131,22 +120,19 @@ public class Registration extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel4MouseEntered(evt);
-            }
         });
-        PhoneNumber.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, -1, -1));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, -1, -1));
 
-        ConfirmPassword.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        ConfirmPassword.setText("Confirm Password :");
-        PhoneNumber.add(ConfirmPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 130, 20));
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel5.setText("Confirm Password :");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 130, 20));
 
         confirmpassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confirmpasswordActionPerformed(evt);
             }
         });
-        PhoneNumber.add(confirmpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 120, 30));
+        jPanel3.add(confirmpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 120, 30));
 
         address.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -158,18 +144,18 @@ public class Registration extends javax.swing.JFrame {
                 addressActionPerformed(evt);
             }
         });
-        PhoneNumber.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 120, 30));
+        jPanel3.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 120, 30));
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel7.setText("Phone number :");
-        PhoneNumber.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         phonenumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 phonenumberActionPerformed(evt);
             }
         });
-        PhoneNumber.add(phonenumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 120, 30));
+        jPanel3.add(phonenumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 120, 30));
 
         jLabel8.setText("Cancel");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -177,12 +163,12 @@ public class Registration extends javax.swing.JFrame {
                 jLabel8MouseClicked(evt);
             }
         });
-        PhoneNumber.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
-        Email.setText("Email :");
-        PhoneNumber.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+        jLabel9.setText("Email :");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
 
-        jPanel1.add(PhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 350, 280));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 350, 280));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -190,38 +176,14 @@ public class Registration extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 870, Short.MAX_VALUE)
+            .addGap(0, 920, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 170, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 870, 170));
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hades/YU.png"))); // NOI18N
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 120));
-
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hades/YU.png"))); // NOI18N
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 120));
-
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel6.setText("Register Now !!");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 130, -1));
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel10.setText("MONEY REMITTANCE");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 260, 20));
-
-        jPanel5.setBackground(new java.awt.Color(51, 51, 255));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("GO DIGITAL USING MONEY REMITTANCE");
-        jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 20));
-
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 260, 20));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 920, 170));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -231,7 +193,7 @@ public class Registration extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -240,8 +202,6 @@ public class Registration extends javax.swing.JFrame {
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         JLabel passLabel = new JLabel("Password:");
         JPasswordField passField = new JPasswordField(15);
-       
-        
     }//GEN-LAST:event_passwordActionPerformed
 
     private void MoneyRemittanceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoneyRemittanceMouseEntered
@@ -254,97 +214,50 @@ public class Registration extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameActionPerformed
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-    Registration r = new Registration();
-    r.setVisible(true);
-    this.dispose();
-    
-    
-   
+        Registration r = new Registration();
+        r.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
-
-    private void addressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addressActionPerformed
-
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-       hades h = new hades();
-       h.setVisible(true);
-       this.dispose();
-    }//GEN-LAST:event_jLabel8MouseClicked
 
     private void confirmpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmpasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmpasswordActionPerformed
 
-    private void phonenumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phonenumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phonenumberActionPerformed
-
     private void addressMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addressMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_addressMouseClicked
 
-    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
+    private void addressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel4MouseEntered
+    }//GEN-LAST:event_addressActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void phonenumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phonenumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phonenumberActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Registration().setVisible(true);
-            }
-        });
-    }
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        hades h = new hades();
+        h.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel8MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ConfirmPassword;
-    private javax.swing.JLabel Email;
     private javax.swing.JLabel MoneyRemittance;
-    private javax.swing.JLabel Password;
-    private javax.swing.JPanel PhoneNumber;
-    private javax.swing.JLabel Username;
     private javax.swing.JTextField address;
     private javax.swing.JPasswordField confirmpassword;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField phonenumber;
     private javax.swing.JTextField username;
