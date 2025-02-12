@@ -5,25 +5,21 @@
  */
 package hades;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
  *
- * @author PC15
+ * @author milan
  */
 public class Registration extends javax.swing.JFrame {
 
     /**
-     * Creates new form Registration
+     * Creates new form registration2
      */
     public Registration() {
-        
+        initComponents();
     }
 
     /**
@@ -39,19 +35,19 @@ public class Registration extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         PhoneNumber = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        password = new javax.swing.JPasswordField();
         MoneyRemittance = new javax.swing.JLabel();
         Username = new javax.swing.JLabel();
-        username = new javax.swing.JTextField();
         Password = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         ConfirmPassword = new javax.swing.JLabel();
-        confirmpassword = new javax.swing.JPasswordField();
+        Cpassword = new javax.swing.JPasswordField();
         address = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         phonenumber = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         Email = new javax.swing.JLabel();
+        password = new javax.swing.JPasswordField();
+        username = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -91,13 +87,6 @@ public class Registration extends javax.swing.JFrame {
         jLabel1.setMaximumSize(new java.awt.Dimension(107, 20));
         PhoneNumber.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 110, 20));
 
-        password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordActionPerformed(evt);
-            }
-        });
-        PhoneNumber.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 120, 30));
-
         MoneyRemittance.setBackground(new java.awt.Color(0, 204, 102));
         MoneyRemittance.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         MoneyRemittance.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -113,13 +102,6 @@ public class Registration extends javax.swing.JFrame {
         Username.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Username.setText("Username :");
         PhoneNumber.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, 20));
-
-        username.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameActionPerformed(evt);
-            }
-        });
-        PhoneNumber.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 120, 30));
 
         Password.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Password.setText("Password :");
@@ -141,12 +123,12 @@ public class Registration extends javax.swing.JFrame {
         ConfirmPassword.setText("Confirm Password :");
         PhoneNumber.add(ConfirmPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 130, 20));
 
-        confirmpassword.addActionListener(new java.awt.event.ActionListener() {
+        Cpassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmpasswordActionPerformed(evt);
+                CpasswordActionPerformed(evt);
             }
         });
-        PhoneNumber.add(confirmpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 120, 30));
+        PhoneNumber.add(Cpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 120, 30));
 
         address.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -181,6 +163,14 @@ public class Registration extends javax.swing.JFrame {
 
         Email.setText("Email :");
         PhoneNumber.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+        PhoneNumber.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 120, 30));
+
+        username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameActionPerformed(evt);
+            }
+        });
+        PhoneNumber.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 120, 30));
 
         jPanel1.add(PhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 350, 280));
 
@@ -235,58 +225,76 @@ public class Registration extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
-        JLabel passLabel = new JLabel("Password:");
-        JPasswordField passField = new JPasswordField(15);
-       
-        
-    }//GEN-LAST:event_passwordActionPerformed
 
     private void MoneyRemittanceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoneyRemittanceMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_MoneyRemittanceMouseEntered
 
-    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
-        JLabel userLabel = new JLabel("Username:");
-        JTextField userField = new JTextField(15);
-    }//GEN-LAST:event_usernameActionPerformed
-
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-    Registration r = new Registration();
-    r.setVisible(true);
-    this.dispose();
+    String pass = new String(password.getPassword()).trim();
+    String Cpass = new String(Cpassword.getPassword()).trim();
+    String phone = phonenumber.getText().trim();
+    String uname = username.getText().trim();
+    String add = address.getText().trim();
+
     
-    
-   
+
+
+
+        if(uname.isEmpty() || pass.isEmpty() || Cpass.isEmpty() || add.isEmpty() || phone.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Please Fill All Boxes");
+
+        }else if(!pass.equals(Cpass))
+        {
+            JOptionPane.showMessageDialog(null, "Password Does Not Match");
+//            System.out.println("Password ["+password+"] Length: "+password.length());
+//            System.out.println("Confirm Password ["+Cpassword+"] Length: "+Cpassword.length());
+
+        }else if(!phone.matches("\\d+"))
+        {
+            JOptionPane.showMessageDialog(null, "Phone Must Only Contain Numbers");
+        }else if(pass.length() != 8)
+        {
+            JOptionPane.showMessageDialog(null, "Password Must be Exactly 8 Characters Long");
+        }else if(phone.length() > 15 || phone.length() < 11)
+        {
+            JOptionPane.showMessageDialog(null, "Invalid Phone num");
+        }
+
     }//GEN-LAST:event_jLabel4MouseClicked
 
-    private void addressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressActionPerformed
+    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_addressActionPerformed
+    }//GEN-LAST:event_jLabel4MouseEntered
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-       hades h = new hades();
-       h.setVisible(true);
-       this.dispose();
-    }//GEN-LAST:event_jLabel8MouseClicked
-
-    private void confirmpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmpasswordActionPerformed
+    private void CpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CpasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_confirmpasswordActionPerformed
-
-    private void phonenumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phonenumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phonenumberActionPerformed
+    }//GEN-LAST:event_CpasswordActionPerformed
 
     private void addressMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addressMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_addressMouseClicked
 
-    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
+    private void addressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel4MouseEntered
+    }//GEN-LAST:event_addressActionPerformed
+
+    private void phonenumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phonenumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phonenumberActionPerformed
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        Hades h = new Hades();
+        h.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -314,6 +322,7 @@ public class Registration extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -325,13 +334,13 @@ public class Registration extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ConfirmPassword;
+    private javax.swing.JPasswordField Cpassword;
     private javax.swing.JLabel Email;
     private javax.swing.JLabel MoneyRemittance;
     private javax.swing.JLabel Password;
     private javax.swing.JPanel PhoneNumber;
     private javax.swing.JLabel Username;
     private javax.swing.JTextField address;
-    private javax.swing.JPasswordField confirmpassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

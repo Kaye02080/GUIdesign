@@ -5,25 +5,20 @@
  */
 package hades;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 
 /**
  *
- * @author PC15
+ * @author milan
  */
-public class hades extends javax.swing.JFrame {
+public class Hades extends javax.swing.JFrame {
 
     /**
-     * Creates new form hades
+     * Creates new form test2
      */
-    public hades() {
+    public Hades() {
         initComponents();
     }
 
@@ -36,18 +31,17 @@ public class hades extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel11 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
         MoneyRemittance = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        Username = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        password = new javax.swing.JPasswordField();
+        Username = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -55,8 +49,6 @@ public class hades extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-
-        jLabel11.setText("jLabel11");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,13 +81,6 @@ public class hades extends javax.swing.JFrame {
         jLabel1.setMaximumSize(new java.awt.Dimension(107, 20));
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 110, 20));
 
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 102, 90, 30));
-
         MoneyRemittance.setBackground(new java.awt.Color(0, 204, 102));
         MoneyRemittance.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         MoneyRemittance.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -111,13 +96,6 @@ public class hades extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Username :");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 50));
-
-        Username.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameActionPerformed(evt);
-            }
-        });
-        jPanel3.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 90, 30));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setText("Password :");
@@ -143,6 +121,8 @@ public class hades extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
+        jPanel3.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 90, 30));
+        jPanel3.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 90, 30));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 120, 200, 230));
 
@@ -189,27 +169,39 @@ public class hades extends javax.swing.JFrame {
     }//GEN-LAST:event_MoneyRemittanceMouseEntered
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-    Registration r = new Registration();
-    r.setVisible(true);
-    this.dispose();
+        Registration r = new Registration();
+        r.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-     JButton loginButton = new JButton("Login");
-    }//GEN-LAST:event_jLabel5MouseClicked
-
     private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
-     
+
     }//GEN-LAST:event_jLabel4MouseEntered
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        JLabel passLabel = new JLabel("Password:");
-        JPasswordField passField = new JPasswordField(15);
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+   
+    
+   String pass = new String(password.getPassword()).trim();
+   String uname = Username.getText().trim();
 
-    private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
+    // Check if username or password is empty
+    if (uname.isEmpty() || pass.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Please Fill All Boxes", "Validation Error", JOptionPane.WARNING_MESSAGE);
+        
+        // Optionally, you can set focus on the first empty field for better user experience
+        if (uname.isEmpty()) {
+            Username.requestFocus();
+        } else if (pass.isEmpty()) {
+            password.requestFocus();
+        }
+    } else {
+        // Add your login logic here (e.g., validating username and password)
+        JOptionPane.showMessageDialog(null, "Login successful (placeholder message)!");
+    }
 
-    }//GEN-LAST:event_UsernameActionPerformed
+
+        
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -228,20 +220,21 @@ public class hades extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(hades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Hades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(hades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Hades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(hades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Hades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(hades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Hades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new hades().setVisible(true);
+                new Hades().setVisible(true);
             }
         });
     }
@@ -250,7 +243,6 @@ public class hades extends javax.swing.JFrame {
     private javax.swing.JLabel MoneyRemittance;
     private javax.swing.JTextField Username;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
@@ -265,6 +257,6 @@ public class hades extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField password;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,12 +7,8 @@ package hades;
 
 /**
  *
- * @author PC15
+ * @author milan
  */
-class txtAddress {
-
-    static Object getText() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+class JLabel {
     
 }
