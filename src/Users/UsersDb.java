@@ -3,22 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hades;
-
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
+package Users;
 
 /**
  *
  * @author milan
  */
-public class Hades extends javax.swing.JFrame {
+public class UsersDb extends javax.swing.JFrame {
 
     /**
-     * Creates new form test2
+     * Creates new form UsersDb
      */
-    public Hades() {
+    public UsersDb() {
         initComponents();
     }
 
@@ -166,7 +162,6 @@ public class Hades extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void MoneyRemittanceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoneyRemittanceMouseEntered
@@ -202,6 +197,7 @@ public class Hades extends javax.swing.JFrame {
             // Add your login logic here (e.g., validating username and password)
             JOptionPane.showMessageDialog(null, "Login successful (placeholder message)!");
         }
+
     }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
@@ -221,21 +217,20 @@ public class Hades extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Hades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UsersDb.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Hades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UsersDb.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Hades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UsersDb.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Hades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UsersDb.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Hades().setVisible(true);
+                new UsersDb().setVisible(true);
             }
         });
     }
